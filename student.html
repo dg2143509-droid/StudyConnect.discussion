@@ -59,18 +59,24 @@ background:#1d46d8;
 
 <div class="login-box">
 <h2>🎓 Student Login</h2>
-
-<input type="text" placeholder="Student ID">
-
-<input type="password" placeholder="Password">
-
+<input type="text" id="userid" placeholder="Student ID">
+<input type="password" id="password" placeholder="Password">
 <button onclick="login()">Login</button>
 
 </div>
 
 <script>
 function login(){
-alert("Student Login page is ready. Backend will be added later.");
+  let id = document.getElementById("userid").value;
+  let pass = document.getElementById("password").value;
+
+  if(id==="ABHAY" && pass==="09876"){
+      alert("Student Login Successful");
+      window.location.href="student-dashboard.html";
+  }else{
+      alert("Wrong ID or Password");
+  }
+}
 }
 </script>
 
