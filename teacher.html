@@ -79,5 +79,24 @@ function login(){
   }
 }
 </script>
+  <!-- वॉइस कॉल के बटन्स -->
+<div style="margin: 10px 0;">
+    <button id="start-voice-call" style="padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer;">🎤 Start Call</button>
+    <button id="end-voice-call" style="padding: 10px 20px; background: #dc3545; color: white; border: none; cursor: pointer; display:none;">🛑 End Call</button>
+</div>
+
+<!-- चैट बॉक्स और इनपुट -->
+<div id="chat-box" style="height: 300px; border: 1px solid #ccc; overflow-y: scroll; padding: 10px; margin-bottom: 10px; background: #f9f9f9;"></div>
+<div style="display: flex; gap: 5px;">
+    <input type="text" id="message-input" style="flex: 1; padding: 10px;" placeholder="Type a message...">
+    <button id="send-btn" style="padding: 10px 20px; background: #28a745; color: white; border: none;">Send</button>
+</div>
+
+<!-- Agora Web SDK लोड करना (कॉल के लिए बेहद ज़रूरी) -->
+<script src="https://agora.io"></script>
+
+<!-- अपनी नई बनाई हुई app.js फ़ाइल को लिंक करना -->
+<script type="module" src="app.js"></script>
+
 </body>
 </html>
