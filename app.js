@@ -53,8 +53,27 @@ let localAudioTrack = null;
 
 const startCallBtn = document.getElementById("start-voice-call");
 const endCallBtn = document.getElementById("end-voice-call");
-
 startCallBtn.addEventListener("click", async () => {
+    alert("Call button clicked");
+
+    try {
+        console.log("AgoraRTC:", typeof AgoraRTC);
+
+        await agoraClient.join(AGORA_APP_ID, CHANNEL_NAME, null, null);
+
+        localAudioTrack = await AgoraRTC.createMicrophoneAudioTrack();
+        await agoraClient.publish([localAudioTrack]);
+
+        alert("Voice call connected!");
+
+        startCallBtn.style.display = "none";
+        endCallBtn.style.display = "inline-block";
+
+    } catch (error) {
+        alert("Error: " + error.message);
+        console.error(error);
+    }
+});
     try {
         await agoraClient.join(AGORA_APP_ID, CHANNEL_NAME, null, null);
         localAudioTrack = await AgoraRTC.createMicrophoneAudioTrack();
