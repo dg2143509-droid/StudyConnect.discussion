@@ -1,53 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Dashboard - StudyConnect</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #eef4ff; padding: 20px; text-align: center; margin: 0; }
-        .card { background: white; padding: 25px; border-radius: 15px; max-width: 400px; margin: 20px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        h2 { color: #2b5cff; margin-top: 0; }
-        #chat-box { height: 280px; border: 1px solid #ddd; overflow-y: auto; padding: 12px; margin-bottom: 15px; background: #fafafa; border-radius: 8px; text-align: left; }
-        #chat-box p { margin: 5px 0; font-size: 15px; }
-        .input-group { display: flex; gap: 8px; }
-        input[type="text"] { flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 15px; }
-        .btn { padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 15px; font-weight: bold; width: 100%; transition: 0.2s; }
-        #start-voice-call { background: #2b5cff; color: white; margin-bottom: 10px; }
-        #start-voice-call:hover { background: #1d46d8; }
-        #end-voice-call { background: #dc3545; color: white; display: none; margin-bottom: 10px; }
-        #send-btn { background: #28a745; color: white; width: auto; }
-        #send-btn:hover { background: #218838; }
-    </style>
-</head>
-<body>
+    <!-- Firebase की ज़रूरी लाइब्रेरीज़ लोड करना (यह गिटहब साइट के लिए सबसे बेस्ट है) -->
+    <script src="https://gstatic.com"></script>
+    <script src="https://gstatic.com"></script>
 
-    <div class="card">
-        <h2>🧑‍🏫 Teacher Dashboard</h2>
-        <p>Welcome, Manya!</p>
-    </div>
-
-    <div class="card">
-        <h3>💬 Student Connect</h3>
-        
-        <!-- वॉइस कॉल सिस्टम -->
-        <button id="start-voice-call" class="btn">🎤 Start Voice Call</button>
-        <button id="end-voice-call" class="btn">🛑 End Call</button>
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-
-        <!-- रियल-टाइम चैट सिस्टम -->
-        <div id="chat-box"></div>
-        <div class="input-group">
-            <input type="text" id="message-input" placeholder="Type a message to student...">
-            <button id="send-btn" class="btn">Send</button>
-        </div>
-    </div>
-
-    <!-- Agora Web SDK लोड करना (कॉल चालू करने के लिए सबसे ज़रूरी लिंक) -->
+    <!-- Agora Web SDK लोड करना -->
     <script src="https://agora.io"></script>
 
-    <!-- आपके जावास्क्रिप्ट लॉजिक को जोड़ना -->
-    <script type="module" src="./app.js"></script>
-
-</body>
-</html>
+    <!-- अपनी जावास्क्रिप्ट फ़ाइल को सामान्य तरीके से लिंक करना -->
+    <script src="app.js"></script>
